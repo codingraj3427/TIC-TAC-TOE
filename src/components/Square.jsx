@@ -1,10 +1,10 @@
-import React from 'react';
-import "./Square.style.css"
+import React from "react";
 
-const Square = ({value}) => {    //Here we are destructing the object
+
+function Square({value}) {    // Here we are destructing the object
   return (
     
-     <button type="button">{value}</button>
+     <button type="button" className="square">{value}</button>
     
   )
 }

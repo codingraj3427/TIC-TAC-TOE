@@ -9,7 +9,7 @@
     "format:lint": "npm run format && npm run lint",
     "clear": "rimraf dist .parcel-cache",
     "start": "vite",
-    "build": "vite build"
+    "build": "npm run clear && vite build"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-preset-nano-react-app": "^0.1.0",
-    "eslint": "^8.9.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
