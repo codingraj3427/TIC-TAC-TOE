@@ -1,10 +1,13 @@
 import React from "react";
 
 
-function Square({value}) {    // Here we are destructing the object
+function Square({value,onClick}) {    // Here we are destructing the object
   return (
     
-     <button type="button" className="square">{value}</button>
+     <button type="button" className="square" 
+      onClick={onClick}
+      >
+       {value}</button>
     
   )
 }
