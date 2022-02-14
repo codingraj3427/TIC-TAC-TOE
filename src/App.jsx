@@ -19,7 +19,6 @@ function App() {
 
 const winner=calculateWinner(current.board);
 
-const message= winner ? `winner is ${winner}`: `Next player is ${current.isXNext? 'X': 'O'}`
 
   const handleSquareClick=(position)=>
 {
