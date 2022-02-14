@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./Square.style.css"
 
 const Square = ({value}) => {    //Here we are destructing the object
   return (
