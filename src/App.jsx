@@ -7,6 +7,7 @@ import "./Style/root.scss";
 
 
 
+
 // eslint-disable-next-line camelcase
 const New_Game=
 [
@@ -77,13 +78,15 @@ const {winner,winningSquares}=calculateWinner(current.board);
   return (
 
     <div className="app">
-    <h1>TiC TAC TOE</h1>
+    <h1>TiC <span className="text-green">TAC</span> TOE</h1>
     <StatusMessage winner={winner} current={current} />
     <Board board={current.board} 
     handleSquareClick={handleSquareClick}
     winningSquares={winningSquares}/>
-    <button type="button" onClick={onNewGame}>Start new game</button>
+    <button type="button" onClick={onNewGame} className={`btn-reset ${winner ?  'active': ' ' }`}>Start new game</button>
+    <h2 style={{ fontWeight: 'normal' }}>Current game history</h2>
     <History history={history} moveTo={moveTo} currentMove={currentmove} />
+    <div className="bg-balls" />
   </div>
     );
   }

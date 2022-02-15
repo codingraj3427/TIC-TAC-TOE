@@ -12,7 +12,7 @@ function Board({board,handleSquareClick,winningSquares}) {
 
     
        <Square value={board[position]} onClick={()=> handleSquareClick(position)}
-       isWinningSquar={isWinningSquare}
+       isWinningSquare={isWinningSquare}
        />
       );
   }; 
