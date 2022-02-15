@@ -5,19 +5,30 @@ import StatusMessage from "./components/StatusMessage";
 import { calculateWinner } from "./components/helpers";
 import "./Style/root.scss";
 
-function App() {
 
+
+// eslint-disable-next-line camelcase
+const New_Game=
+[
+
+  {board:Array(9).fill(null),isXNext:true},
+
+];
+
+
+function  App() 
+
+{
 
   // This is for maintaining the history of the game
-  const [history,setHistory]= useState([
-    {board:Array(9).fill(null),isXNext:true}]);
+  const [history,setHistory]= useState(New_Game);
 
     // This is for current move
     const[currentmove,setCurrentmove]=useState(0);
     const current=history[currentmove];
 
 
-const winner=calculateWinner(current.board);
+const {winner,winningSquares}=calculateWinner(current.board);
 
 
   const handleSquareClick=(position)=>
@@ -57,12 +68,21 @@ const winner=calculateWinner(current.board);
     setCurrentmove(move);
   };
 
+  function onNewGame()
+  {
+    setHistory(New_Game);
+    setCurrentmove(0);
+  }
+
   return (
 
     <div className="app">
     <h1>TiC TAC TOE</h1>
     <StatusMessage winner={winner} current={current} />
-    <Board board={current.board} handleSquareClick={handleSquareClick}/>
+    <Board board={current.board} 
+    handleSquareClick={handleSquareClick}
+    winningSquares={winningSquares}/>
+    <button type="button" onClick={onNewGame}>Start new game</button>
     <History history={history} moveTo={moveTo} currentMove={currentmove} />
   </div>
     );
